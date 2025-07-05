@@ -3,9 +3,13 @@
 
 ## Assingment
 [Assignment1](https://github.com/ottersem/CS231n-answer/tree/main/assignment1)
+
 [K-NN](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/knn.ipynb)
+
 [SVM](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/svm.ipynb)
+
 [Softmax](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/softmax.ipynb) (WIP)
+
 [Two_Layer_Net](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/two_layer_net.ipynb) (WIP)
 
 - - -
@@ -13,14 +17,19 @@
 
 
 - - -
-[Assignment3]
+[Assignment3]()
 ## Classifiers
 ### Assignment1
 [K_nearest_neighbor.py](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/k_nearest_neighbor.py)
+
 [Linear_SVM](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/linear_svm.py)
+
 [Linear_Classifier](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/linear_classifier.py) (WIP)
+
 [Softmax](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/softmax.py) (WIP)
+
 [FC_net](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/fc_net.py) (WIP)
+
 
 ### Assignment2
 
