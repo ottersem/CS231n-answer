@@ -24,7 +24,7 @@
 
 [Linear_SVM](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/linear_svm.py)
 
-[Linear_Classifier](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/linear_classifier.py) (WIP)
+[Linear_Classifier](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/linear_classifier.py)
 
 [Softmax](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/softmax.py) (WIP)
 
