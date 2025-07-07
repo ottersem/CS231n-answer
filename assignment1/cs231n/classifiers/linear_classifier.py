@@ -3,6 +3,7 @@ from __future__ import print_function
 from builtins import range
 from builtins import object
 import numpy as np
+from numpy._core.defchararray import index
 from ..classifiers.linear_svm import *
 from ..classifiers.softmax import *
 from past.builtins import xrange
@@ -66,7 +67,10 @@ class LinearClassifier(object):
             #########################################################################
             # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-            pass
+            idx_batch = np.random.choice(num_train, batch_size, replace = True) # num_train 중 batch_size 만큼의 인덱스 랜덤하게 뽑기
+
+            X_batch = X[idx_batch] # (batch_size, dim)
+            y_batch = y[idx_batch] # (batch_size,)
 
             # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
@@ -81,7 +85,7 @@ class LinearClassifier(object):
             #########################################################################
             # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-            pass
+            self.W -= learning_rate * grad # Vanilla Gradient Descent 응용 step size == learning rate
 
             # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
@@ -111,7 +115,9 @@ class LinearClassifier(object):
         ###########################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-        pass
+        scores = np.dot(X, self.W) # (N,D) dot (D,C) = (N,C)
+
+        y_pred = np.argmax(scores, axis=1)
 
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         return y_pred
