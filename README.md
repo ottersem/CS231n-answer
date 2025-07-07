@@ -8,7 +8,7 @@
 
 [SVM](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/svm.ipynb)
 
-[Softmax](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/softmax.ipynb) (WIP)
+[Softmax](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/softmax.ipynb) 
 
 [Two_Layer_Net](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/two_layer_net.ipynb) (WIP)
 
@@ -26,7 +26,7 @@
 
 [Linear_Classifier](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/linear_classifier.py)
 
-[Softmax](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/softmax.py) (WIP)
+[Softmax](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/softmax.py)
 
 [FC_net](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/fc_net.py) (WIP)
 
