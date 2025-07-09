@@ -1,4 +1,5 @@
 from builtins import range
+from matplotlib.colors import colorConverter
 import numpy as np
 
 
@@ -28,7 +29,9 @@ def affine_forward(x, w, b):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    pass
+    reshaped_x = x.reshape(x.shape[0],-1) # (N, d_1, ..., d_k)를 (N,D) 형태로 변환함
+
+    out = np.dot(reshaped_x, w) + b
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -60,8 +63,14 @@ def affine_backward(dout, cache):
     # TODO: Implement the affine backward pass.                               #
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
+    x_reshaped = x.reshape(x.shape[0], -1)
 
-    pass
+    dx = np.dot(dout, np.transpose(w))
+    dx = dx.reshape(*x.shape)
+
+    dw = np.dot(np.transpose(x_reshaped), dout)
+
+    db = np.sum(dout, axis = 0)
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -87,7 +96,7 @@ def relu_forward(x):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    pass
+    out = np.maximum(0,x)
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -114,7 +123,7 @@ def relu_backward(dout, cache):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    pass
+    dx = dout * (x>0)
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -772,8 +781,20 @@ def svm_loss(x, y):
     # TODO: Copy over your solution from A1.
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
+    delta = 1.0
 
-    pass
+    N = x.shape[0]
+    correct_class = x[np.arange(N),y].reshape(-1,1)
+
+    margins = np.maximum(0, x - correct_class + delta)
+    margins[np.arange(N),y] = 0 # 손실 함수에서 올바른 클래스는 카운팅 ㄴㄴ
+
+    loss = np.sum(margins) / N
+
+    num_pos = (margins>0).astype(float) # 마스크, 마진이 0보다 크면 1
+    dx = num_pos
+    dx[np.arange(N),y] -= np.sum(num_pos, axis = 1)
+    dx /= N
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
@@ -803,7 +824,20 @@ def softmax_loss(x, y):
     ###########################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-    pass
+    num_train = x.shape[0]
+
+    shifted_logits = x - np.max(x, axis = 1, keepdims= True)
+
+    Z = np.sum(np.exp(shifted_logits), axis = 1, keepdims=True)
+    log_probs = shifted_logits - np.log(Z)
+
+    probs = np.exp(log_probs)
+    loss = -np.sum(log_probs[np.arange(num_train), y]) / num_train
+
+    dx = probs.copy()
+    dx[np.arange(num_train), y] -= 1
+    dx /= num_train
+
 
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     ###########################################################################
