@@ -10,27 +10,11 @@
 
 [Softmax](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/softmax.ipynb) 
 
-[Two_Layer_Net](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/two_layer_net.ipynb) (WIP)
+[Two_Layer_Net](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/two_layer_net.ipynb)
 
 - - -
-[Assignment2]()
+[Assignment2](https://github.com/ottersem/CS231n-answer/tree/main/assignment2)
 
 
 - - -
-[Assignment3]()
-## Classifiers
-### Assignment1
-[K_nearest_neighbor.py](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/k_nearest_neighbor.py)
-
-[Linear_SVM](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/linear_svm.py)
-
-[Linear_Classifier](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/linear_classifier.py)
-
-[Softmax](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/softmax.py)
-
-[FC_net](https://github.com/ottersem/CS231n-answer/blob/main/assignment1/cs231n/classifiers/fc_net.py) (WIP)
-
-
-### Assignment2
-
-### Assignment2
+[Assignment3](https://github.com/ottersem/CS231n-answer/tree/main/assignment3)
